@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isSecondLargestNumber(array) {
+
+        var firstLargestNumber = array[0];
+        var secondLargestNumber = array[1];
+        var index;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] > firstLargestNumber) {
+                firstLargestNumber = array[i];
+                index = i;
+            }
+        }
+        for (var j = 0; j < array.length; j++){
+            if (array[j] === firstLargestNumber){
+                continue;
+            }
+            if (array[j] > secondLargestNumber){
+                secondLargestNumber = array[j];
+            }
+        }
+        return secondLargestNumber;
+    }
+    var array = [-3,-5,-3,-3,-22,0];
+    alert('Second Largest Number is ' + isSecondLargestNumber(array));
+</script>
+</body>
+</html>
